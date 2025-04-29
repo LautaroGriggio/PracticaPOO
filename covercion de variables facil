@@ -1,0 +1,25 @@
+/*		
+// convercion de variables	
+		Scanner s = new Scanner(System.in);
+		String cadena = "5";
+	
+		int nro1 = 22;
+		float nro2 = 2.4f;
+		
+		nro2 = Float.parseFloat(cadena);
+		nro1 = Integer.parseInt(cadena);		
+		cadena = String.valueOf(nro1);
+		System.out.println(cadena);		
+		nro1 = Integer.valueOf(cadena);
+		System.out.println(nro1);
+		
+		String nombre;
+		int edad;
+		System.out.println("ingrese su nombre");
+		nombre = s.nextLine();
+		System.out.println("ingrese su edad");
+		edad = s.nextInt();
+		s.nextLine();
+		System.out.println("Hola mi nombre es " + nombre + " y mi edad es " + edad);
+		s.close();
+*/
