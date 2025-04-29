@@ -1,0 +1,69 @@
+/*Se tiene la produccion total en toneladas de cereales {arroz, avena, cebada, trigo}
+ * cosechadas durante cada mes del año anterior. elaborar un programa q proporcione:
+ * a) el promedio anual de las toneladas cosechadas
+ * b)¿cuantos meses tuvieron una cosecha mayor al promedio anual?
+ * c)¿cuantos meses tuvieron una cosecha inferior al promedio anual?
+ * d)¿cual fue el mes en q se producieron mayor numero de toneladas?*/
+import java.util.Scanner;
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		int[][] array = {
+			{20,10,50,60},
+			{40,30,30,10},
+			{30,20,10,30},
+			{10,30,30,20},
+			{20,40,20,10},
+			{20,40,30,10},
+			{30,20,40,20},
+			{20,30,50,10},
+			{40,20,20,40},
+			{10,10,10,30},
+			{50,30,30,30},
+			{60,30,40,20}
+	};
+	
+		int valor = 0;
+		int cant = 12;
+		int[] cerealesXMes = new int[array.length];
+		
+		
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[i].length; j++) {
+				valor += array[i][j];
+				cerealesXMes[i]+= array[i][j];
+			}
+		}
+		
+		
+		float prom = calcularPromedio(valor, cant);
+		System.out.println("el promedio anual es de " + prom);
+	
+		int cantMesMayProm=0;
+		int cantMesMenProm=0;
+		int mesMay=0;
+		for (int i = 0; i < cerealesXMes.length; i++) {
+			if(i==0||cerealesXMes[mesMay]<cerealesXMes[i]) {
+				mesMay=i;
+			}
+			
+			if(cerealesXMes[i]>prom){
+				cantMesMayProm++;
+			}
+			else if(cerealesXMes[i]<prom) {
+				cantMesMenProm++;
+			}
+		}
+		System.out.println("La cantidad de meses coon cosecha mayor al promedio es: "+ cantMesMayProm);
+		System.out.println("La cantidad de meses coon cosecha menor al promedio es: "+ cantMesMenProm);
+		System.out.println("El mes con mayor produccion fue el numero "+ (mesMay+1));
+		}
+		
+		public static float calcularPromedio(int valor, int cant) {
+			float prom = (float)valor/cant; 
+			return prom;
+		}
+		
+	
+		}
