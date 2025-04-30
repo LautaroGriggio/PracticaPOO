@@ -1,0 +1,27 @@
+
+public class Animal {
+
+	public String nombre = "pepe";
+	public int edad = 2;
+	public String color = "rojo";
+	public String tipo = "loro";
+	public String tipoAni = "";
+	public int sonido=0;
+	
+	public Animal(String tipoAni, String nombre, int edad, String color, String tipo, int sonido) {
+		System.out.println("El: " + tipoAni + " ");
+		this.nombre=nombre;
+		this.edad=edad;
+		this.color=color;
+		this.tipo=tipo;
+		this.sonido=sonido;
+	}
+	
+	public void hacerSonido() {
+		sonido= 2+2;
+		System.out.println(this.sonido);
+		
+	}
+	
+	
+}
