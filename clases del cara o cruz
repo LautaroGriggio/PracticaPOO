@@ -1,0 +1,25 @@
+//clase Jugador
+
+public class Jugador {
+	public String nombre;
+	
+	public Jugador(String nombre) {
+		this.nombre=nombre;
+	}
+}
+
+//clase Maquina
+import java.util.Random;
+
+public class Maquina {
+	public Moneda moneda = new Moneda();
+	private Random rand = new Random();;
+	
+	public void lanzar() {
+		moneda.estado = rand.nextInt(2);
+	}
+}
+//clase Moneda
+public class Moneda {
+	public int estado;
+}
