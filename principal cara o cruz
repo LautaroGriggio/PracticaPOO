@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class Principal {
+	static Scanner s = new Scanner(System.in);
+	public static void main(String[] args) {
+	Jugador jugador;
+	Maquina maquina = new Maquina();
+	
+		System.out.println("Ingrese su nombre");
+		String nombre=s.nextLine();
+		jugador = new Jugador(nombre);
+		System.out.println(jugador.nombre + "  bienvendio al casino de cara o ceca");
+		int salir=0;
+		do { 
+
+		System.out.println("ingrese cara(0) o ceca(1)");
+		int resp=validarDato(0, 1);
+		maquina.lanzar();
+		if(maquina.moneda.estado== 0) {
+			System.out.println("Salio cara");
+			if(resp==0) {
+				System.out.println("ganaste");
+			}else {
+				System.out.println("perdiste");
+			}
+		}else {
+			System.out.println("salio ceca");
+			if(resp==1) {
+				System.out.println("Ganaste");
+			}else {
+				System.out.println("perdiste");
+			}
+		}
+		System.out.println("quiere seguir jugando? 1 si 0 no");
+		salir = s.nextInt();
+		}while(salir==1);
+		
+
+	}
+private static int validarDato(int min, int max) {
+	
+	boolean error = false;
+	int opcion=0;
+	do {
+		error =false;
+		try {
+			opcion = s.nextInt();
+			if(opcion<min||opcion>max) {
+				error=true;
+				System.out.println("Numero no valido, ingrese otra vez");
+			}
+			}catch(Exception e) {
+				error=true;
+				System.out.println("Lo ingresado no es valido, ingrese otra vez");
+				s.nextLine();
+			}
+		
+		}while(error);
+	return opcion;
+}
+	
+	
+}
+	
