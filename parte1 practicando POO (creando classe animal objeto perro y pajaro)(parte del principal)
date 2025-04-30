@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class Principal {
+	static Animal pajaro;
+	static Animal perro;
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+//		pajaro = new Pajaro();
+		
+//		System.out.println("El nombre del pajaro es: "+ pajaro.nombre + " El color del pajaro es"+ pajaro.color);
+//		System.out.println("La edad del pajaro es: "+pajaro.edad + " y es detipo: "+ pajaro.tipo);
+//		s.nextLine();
+		
+		System.out.println("Ingrese el nombre del pajaro: ");
+		String nombre = s.nextLine();
+		
+		System.out.println("Ingrese la edad del pajaro: ");
+		int edad = s.nextInt();
+		s.nextLine();
+		
+		System.out.println("Ingrese el color del pajaro: ");
+		String color = s.nextLine();
+
+		System.out.println("Ingrese el tipo del pajaro: ");
+		String tipo = s.nextLine();
+		s.close();
+		pajaro = new Animal("pajaro ", nombre, edad, color, tipo,  2);
+		
+		System.out.println("El nombre del pajaro es: "+ pajaro.nombre + " su edad es:  "
+		+ pajaro.edad + " su color: " + pajaro.color +" y su tipo: "+ pajaro.tipo);
+		pajaro.hacerSonido();
+		
+		perro = new Animal("perro", "albert", 2, "rojo", "mamifero", 0);
+		System.out.println(perro.nombre + "  " + perro.edad + "  "  + perro.color + "  " +perro.tipo);
+		perro.hacerSonido();
+	}
+}
+	
